@@ -69,15 +69,15 @@ public class Item {
         }
     }
 
-    public String nombre() {
-        return nombre;
+    public boolean esSuNombre(String posibleNombre) {
+        return this.nombre.equals(posibleNombre);
     }
 
-    public int expiraEn() {
-        return expiraEn;
+    public boolean expiraEn(int cantidadDeDias) {
+        return this.expiraEn == cantidadDeDias;
     }
 
-    public int calidad() {
-        return calidad;
+    public boolean tieneCalidadDe(int supuestaCalidad) {
+        return this.calidad == supuestaCalidad;
     }
 }

@@ -2,7 +2,7 @@ package com.gildedrose;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class GildedRoseTest {
 
@@ -13,9 +13,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("foo", app.items[0].nombre());
-        assertEquals(2, app.items[0].calidad());
-        assertEquals(2, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("foo"));
+        assertTrue(app.items[0].tieneCalidadDe(2));
+        assertTrue(app.items[0].expiraEn(2));
     }
 
     @Test
@@ -25,9 +25,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("foo", app.items[0].nombre());
-        assertEquals(1, app.items[0].calidad());
-        assertEquals(-2, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("foo"));
+        assertTrue(app.items[0].tieneCalidadDe(1));
+        assertTrue(app.items[0].expiraEn(-2));
     }
 
     @Test
@@ -37,9 +37,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Sulfuras, Hand of Ragnaros", app.items[0].nombre());
-        assertEquals(80, app.items[0].calidad());
-        assertEquals(5, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Sulfuras, Hand of Ragnaros"));
+        assertTrue(app.items[0].tieneCalidadDe(80));
+        assertTrue(app.items[0].expiraEn(5));
     }
 
 
@@ -50,9 +50,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("foo", app.items[0].nombre());
-        assertEquals(0, app.items[0].calidad());
-        assertEquals(-3, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("foo"));
+        assertTrue(app.items[0].tieneCalidadDe(0));
+        assertTrue(app.items[0].expiraEn(-3));
     }
 
     @Test
@@ -63,9 +63,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Aged Brie", app.items[0].nombre());
-        assertEquals(4, app.items[0].calidad());
-        assertEquals(6, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Aged Brie"));
+        assertTrue(app.items[0].tieneCalidadDe(4));
+        assertTrue(app.items[0].expiraEn(6));
     }
 
     @Test
@@ -76,9 +76,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Aged Brie", app.items[0].nombre());
-        assertEquals(6, app.items[0].calidad());
-        assertEquals(-2, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Aged Brie"));
+        assertTrue(app.items[0].tieneCalidadDe(6));
+        assertTrue(app.items[0].expiraEn(-2));
     }
 
     @Test
@@ -88,9 +88,9 @@ public class GildedRoseTest {
         for (int i = 0; i < 60; i++) {
             app.updateQuality();
         }
-        assertEquals("Aged Brie", app.items[0].nombre());
-        assertEquals(50, app.items[0].calidad());
-        assertEquals(-50, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Aged Brie"));
+        assertTrue(app.items[0].tieneCalidadDe(50));
+        assertTrue(app.items[0].expiraEn(-50));
     }
 
     @Test
@@ -102,9 +102,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].nombre());
-        assertEquals(4, app.items[0].calidad());
-        assertEquals(16, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Backstage passes to a TAFKAL80ETC concert"));
+        assertTrue(app.items[0].tieneCalidadDe(4));
+        assertTrue(app.items[0].expiraEn(16));
     }
 
     @Test
@@ -116,9 +116,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].nombre());
-        assertEquals(8, app.items[0].calidad());
-        assertEquals(6, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Backstage passes to a TAFKAL80ETC concert"));
+        assertTrue(app.items[0].tieneCalidadDe(8));
+        assertTrue(app.items[0].expiraEn(6));
     }
 
     @Test
@@ -130,9 +130,9 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].nombre());
-        assertEquals(12, app.items[0].calidad());
-        assertEquals(1, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Backstage passes to a TAFKAL80ETC concert"));
+        assertTrue(app.items[0].tieneCalidadDe(12));
+        assertTrue(app.items[0].expiraEn(1));
     }
 
     @Test
@@ -144,8 +144,8 @@ public class GildedRoseTest {
         app.updateQuality();
         app.updateQuality();
         app.updateQuality();
-        assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[0].nombre());
-        assertEquals(0, app.items[0].calidad());
-        assertEquals(-4, app.items[0].expiraEn());
+        assertTrue(app.items[0].esSuNombre("Backstage passes to a TAFKAL80ETC concert"));
+        assertTrue(app.items[0].tieneCalidadDe(0));
+        assertTrue(app.items[0].expiraEn(-4));
     }
 }
