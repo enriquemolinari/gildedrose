@@ -32,7 +32,7 @@ public class GildedRoseTest {
 
     @Test
     public void sulfurasNuncaSeVenceNiDisminuyeLaCalidad() {
-        var items = new DefaultItem[]{new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 80)};
+        var items = new Item[]{new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 80)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -57,7 +57,7 @@ public class GildedRoseTest {
 
     @Test
     public void egedBrieAumentaLaCalidadAMedidaQueEnvejece() {
-        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 10, 0)};
+        var items = new Item[]{new AgedBrie("Aged Brie", 10, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -70,7 +70,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieAumentaDobleCuandoCaduca() {
-        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 2, 0)};
+        var items = new Item[]{new AgedBrie("Aged Brie", 2, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -83,7 +83,7 @@ public class GildedRoseTest {
 
     @Test
     public void egedBrieAumentaPeroNoSupera50() {
-        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 10, 0)};
+        var items = new Item[]{new AgedBrie("Aged Brie", 10, 0)};
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < 60; i++) {
             app.updateQuality();
@@ -95,7 +95,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTambienComoAgedBrie() {
-        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 20, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -109,7 +109,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaDobleCuando10DiasOMenosYMasDeCinco() {
-        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 10, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -123,7 +123,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTripleCuando5DiasOMenos() {
-        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 5, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -137,7 +137,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageQuedaEnCalidad0CuandoYaPasoElConcierto() {
-        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 0, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();

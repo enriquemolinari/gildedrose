@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrie extends DefaultItem {
+public class AgedBrie extends Item {
     public AgedBrie(String nombre, int expiraEn, int calidad) {
         super(nombre, expiraEn, calidad);
     }

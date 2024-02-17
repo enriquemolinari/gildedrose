@@ -1,9 +1,9 @@
 package com.gildedrose;
 
 class GildedRose {
-    DefaultItem[] items;
+    Item[] items;
 
-    public GildedRose(DefaultItem[] items) {
+    public GildedRose(Item[] items) {
         this.items = items;
     }
 
