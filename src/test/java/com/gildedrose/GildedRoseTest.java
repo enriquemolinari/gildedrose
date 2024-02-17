@@ -32,7 +32,7 @@ public class GildedRoseTest {
 
     @Test
     public void sulfurasNuncaSeVenceNiDisminuyeLaCalidad() {
-        Item[] items = new Item[]{new DefaultItem("Sulfuras, Hand of Ragnaros", 5, 80)};
+        Item[] items = new Item[]{new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 80)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -95,7 +95,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTambienComoAgedBrie() {
-        Item[] items = new Item[]{new DefaultItem("Backstage passes to a TAFKAL80ETC concert",
+        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 20, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -109,7 +109,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaDobleCuando10DiasOMenosYMasDeCinco() {
-        Item[] items = new Item[]{new DefaultItem("Backstage passes to a TAFKAL80ETC concert",
+        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 10, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -123,7 +123,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTripleCuando5DiasOMenos() {
-        Item[] items = new Item[]{new DefaultItem("Backstage passes to a TAFKAL80ETC concert",
+        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 5, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -137,7 +137,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageQuedaEnCalidad0CuandoYaPasoElConcierto() {
-        Item[] items = new Item[]{new DefaultItem("Backstage passes to a TAFKAL80ETC concert",
+        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 0, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();

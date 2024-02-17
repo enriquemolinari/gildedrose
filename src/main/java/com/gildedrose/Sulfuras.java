@@ -5,5 +5,15 @@ public class Sulfuras extends DefaultItem {
         super(nombre, expiraEn, calidad);
     }
 
+    @Override
+    public void administrarCalidad() {
+    }
 
+    @Override
+    public void administrarCaducidad() {
+    }
+
+    @Override
+    public void administrarCalidadArticulosExpirados() {
+    }
 }
