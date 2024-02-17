@@ -1,9 +1,9 @@
 package com.gildedrose;
 
 public class Item {
-    public String nombre;
-    public int expiraEn; //expresado en días
-    public int calidad;
+    private String nombre;
+    private int expiraEn; //expresado en días
+    private int calidad;
 
     public Item(String nombre, int expiraEn, int calidad) {
         this.nombre = nombre;
@@ -67,5 +67,17 @@ public class Item {
                 }
             }
         }
+    }
+
+    public String nombre() {
+        return nombre;
+    }
+
+    public int expiraEn() {
+        return expiraEn;
+    }
+
+    public int calidad() {
+        return calidad;
     }
 }
