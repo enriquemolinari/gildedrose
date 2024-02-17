@@ -23,11 +23,6 @@ public class Backstage extends DefaultItem {
     }
 
     @Override
-    public void administrarCaducidad() {
-        expiraEn = expiraEn - 1;
-    }
-
-    @Override
     public void administrarCalidadArticulosExpirados() {
         if (expiraEn < 0) {
             calidad = 0;

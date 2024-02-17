@@ -13,11 +13,6 @@ public class AgedBrie extends DefaultItem {
     }
 
     @Override
-    public void administrarCaducidad() {
-        expiraEn = expiraEn - 1;
-    }
-
-    @Override
     public void administrarCalidadArticulosExpirados() {
         if (expiraEn < 0) {
             if (calidad < 50) {
