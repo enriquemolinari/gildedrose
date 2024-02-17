@@ -14,7 +14,7 @@ public class OriginalTextTest {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         var out = new PrintStream(outputStream);
 
-        Item[] items = new Item[]{
+        var items = new DefaultItem[]{
                 new DefaultItem("+5 Dexterity Vest", 10, 20), //
                 new AgedBrie("Aged Brie", 2, 0), //
                 new DefaultItem("Elixir of the Mongoose", 5, 7), //

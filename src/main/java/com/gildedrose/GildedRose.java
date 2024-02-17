@@ -1,17 +1,15 @@
 package com.gildedrose;
 
 class GildedRose {
-    Item[] items;
+    DefaultItem[] items;
 
-    public GildedRose(Item[] items) {
+    public GildedRose(DefaultItem[] items) {
         this.items = items;
     }
 
     public void updateQuality() {
         for (Item item : items) {
-            item.administrarCalidad();
-            item.administrarCaducidad();
-            item.administrarCalidadArticulosExpirados();
+            item.update();
         }
     }
 }

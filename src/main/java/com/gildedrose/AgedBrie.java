@@ -6,14 +6,14 @@ public class AgedBrie extends DefaultItem {
     }
 
     @Override
-    public void administrarCalidad() {
+    protected void administrarCalidad() {
         if (calidad < 50) {
             calidad = calidad + 1;
         }
     }
 
     @Override
-    public void administrarCalidadArticulosExpirados() {
+    protected void administrarCalidadArticulosExpirados() {
         if (expiraEn < 0) {
             if (calidad < 50) {
                 calidad = calidad + 1;

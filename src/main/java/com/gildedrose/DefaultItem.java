@@ -16,20 +16,17 @@ public class DefaultItem implements Item {
         return this.nombre + ", " + this.expiraEn + ", " + this.calidad;
     }
 
-    @Override
-    public void administrarCalidad() {
+    protected void administrarCalidad() {
         if (calidad > 0) {
             calidad = calidad - 1;
         }
     }
 
-    @Override
-    public void administrarCaducidad() {
+    protected void administrarCaducidad() {
         expiraEn = expiraEn - 1;
     }
 
-    @Override
-    public void administrarCalidadArticulosExpirados() {
+    protected void administrarCalidadArticulosExpirados() {
         if (expiraEn < 0) {
             if (calidad > 0) {
                 calidad = calidad - 1;
@@ -38,16 +35,20 @@ public class DefaultItem implements Item {
     }
 
     @Override
+    public void update() {
+        administrarCalidad();
+        administrarCaducidad();
+        administrarCalidadArticulosExpirados();
+    }
+
     public boolean esSuNombre(String posibleNombre) {
         return this.nombre.equals(posibleNombre);
     }
 
-    @Override
     public boolean expiraEn(int cantidadDeDias) {
         return this.expiraEn == cantidadDeDias;
     }
 
-    @Override
     public boolean tieneCalidadDe(int supuestaCalidad) {
         return this.calidad == supuestaCalidad;
     }

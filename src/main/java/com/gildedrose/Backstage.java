@@ -6,7 +6,7 @@ public class Backstage extends DefaultItem {
     }
 
     @Override
-    public void administrarCalidad() {
+    protected void administrarCalidad() {
         if (calidad < 50) {
             calidad = calidad + 1;
             if (expiraEn < 11) {
@@ -23,7 +23,7 @@ public class Backstage extends DefaultItem {
     }
 
     @Override
-    public void administrarCalidadArticulosExpirados() {
+    protected void administrarCalidadArticulosExpirados() {
         if (expiraEn < 0) {
             calidad = 0;
         }

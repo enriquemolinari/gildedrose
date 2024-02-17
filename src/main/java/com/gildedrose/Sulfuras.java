@@ -6,14 +6,14 @@ public class Sulfuras extends DefaultItem {
     }
 
     @Override
-    public void administrarCalidad() {
+    protected void administrarCalidad() {
     }
 
     @Override
-    public void administrarCaducidad() {
+    protected void administrarCaducidad() {
     }
 
     @Override
-    public void administrarCalidadArticulosExpirados() {
+    protected void administrarCalidadArticulosExpirados() {
     }
 }

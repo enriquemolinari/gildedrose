@@ -8,7 +8,7 @@ public class GildedRoseTest {
 
     @Test
     public void productosDegradanSuCalidadCuandoEnvejecen() {
-        Item[] items = new Item[]{new DefaultItem("foo", 5, 5)};
+        var items = new DefaultItem[]{new DefaultItem("foo", 5, 5)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -20,7 +20,7 @@ public class GildedRoseTest {
 
     @Test
     public void productosDegradanDobleSiCaducaron() {
-        Item[] items = new Item[]{new DefaultItem("foo", 1, 6)};
+        var items = new DefaultItem[]{new DefaultItem("foo", 1, 6)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -32,7 +32,7 @@ public class GildedRoseTest {
 
     @Test
     public void sulfurasNuncaSeVenceNiDisminuyeLaCalidad() {
-        Item[] items = new Item[]{new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 80)};
+        var items = new DefaultItem[]{new Sulfuras("Sulfuras, Hand of Ragnaros", 5, 80)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -45,7 +45,7 @@ public class GildedRoseTest {
 
     @Test
     public void calidadNuncaPuedeSerNegativa() {
-        Item[] items = new Item[]{new DefaultItem("foo", 0, 1)};
+        var items = new DefaultItem[]{new DefaultItem("foo", 0, 1)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -57,7 +57,7 @@ public class GildedRoseTest {
 
     @Test
     public void egedBrieAumentaLaCalidadAMedidaQueEnvejece() {
-        Item[] items = new Item[]{new AgedBrie("Aged Brie", 10, 0)};
+        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 10, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -70,7 +70,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieAumentaDobleCuandoCaduca() {
-        Item[] items = new Item[]{new AgedBrie("Aged Brie", 2, 0)};
+        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 2, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         app.updateQuality();
@@ -83,7 +83,7 @@ public class GildedRoseTest {
 
     @Test
     public void egedBrieAumentaPeroNoSupera50() {
-        Item[] items = new Item[]{new AgedBrie("Aged Brie", 10, 0)};
+        var items = new DefaultItem[]{new AgedBrie("Aged Brie", 10, 0)};
         GildedRose app = new GildedRose(items);
         for (int i = 0; i < 60; i++) {
             app.updateQuality();
@@ -95,7 +95,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTambienComoAgedBrie() {
-        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 20, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -109,7 +109,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaDobleCuando10DiasOMenosYMasDeCinco() {
-        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 10, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -123,7 +123,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageAumentaTripleCuando5DiasOMenos() {
-        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 5, 0)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -137,7 +137,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageQuedaEnCalidad0CuandoYaPasoElConcierto() {
-        Item[] items = new Item[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
+        var items = new DefaultItem[]{new Backstage("Backstage passes to a TAFKAL80ETC concert",
                 0, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
