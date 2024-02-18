@@ -148,4 +148,32 @@ public class GildedRoseTest {
         assertTrue(app.items[0].tieneCalidadDe(0));
         assertTrue(app.items[0].expiraEn(-4));
     }
+
+    @Test
+    public void conjuredSeDegradaElDobleQueLosDefaultItems() {
+        Item[] items;
+        items = new Item[]{new Conjured("Conjured 1",
+                5, 10)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        app.updateQuality();
+        assertTrue(app.items[0].esSuNombre("Conjured 1"));
+        assertTrue(app.items[0].tieneCalidadDe(6));
+        assertTrue(app.items[0].expiraEn(3));
+    }
+
+    @Test
+    public void conjuredSeDegradaElDobleQueLosDefaultItemsTambienCuandoExpiran() {
+        Item[] items;
+        items = new Item[]{new Conjured("Conjured 1",
+                2, 14)};
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        app.updateQuality();
+        assertTrue(app.items[0].esSuNombre("Conjured 1"));
+        assertTrue(app.items[0].tieneCalidadDe(2));
+        assertTrue(app.items[0].expiraEn(-2));
+    }
 }
