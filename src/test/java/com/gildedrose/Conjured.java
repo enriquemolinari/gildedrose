@@ -6,14 +6,14 @@ public class Conjured extends DefaultItem {
     }
 
     @Override
-    protected void administrarCalidad() {
-        super.administrarCalidad();
-        super.administrarCalidad();
+    protected int calcularCalidad(int actualExpiraEn, int actualCalidad) {
+        var calidad = super.calcularCalidad(actualExpiraEn, actualCalidad);
+        return super.calcularCalidad(actualExpiraEn, calidad);
     }
 
     @Override
-    protected void administrarCalidadArticulosExpirados() {
-        super.administrarCalidadArticulosExpirados();
-        super.administrarCalidadArticulosExpirados();
+    protected int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad) {
+        var calidad = super.calcularCalidadArticulosExpirados(actualExpiraEn, actualCalidad);
+        return super.calcularCalidadArticulosExpirados(actualExpiraEn, calidad);
     }
 }

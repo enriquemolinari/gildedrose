@@ -6,17 +6,19 @@ public class DefaultItem extends Item {
         super(nombre, expiraEn, calidad);
     }
 
-    protected void administrarCalidad() {
-        if (calidad > 0) {
-            calidad = calidad - 1;
+    protected int calcularCalidad(int actualExpiraEn, int actualCalidad) {
+        if (actualCalidad > 0) {
+            return actualCalidad - 1;
         }
+        return actualCalidad;
     }
 
-    protected void administrarCalidadArticulosExpirados() {
-        if (expiraEn < 0) {
-            if (calidad > 0) {
-                calidad = calidad - 1;
+    protected int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad) {
+        if (actualExpiraEn < 0) {
+            if (actualCalidad > 0) {
+                return actualCalidad - 1;
             }
         }
+        return actualCalidad;
     }
 }

@@ -2,9 +2,9 @@ package com.gildedrose;
 
 public abstract class Item {
 
-    protected String nombre;
-    protected int expiraEn; //expresado en días
-    protected int calidad;
+    private final String nombre;
+    private int expiraEn; //expresado en días
+    private int calidad;
 
     public Item(String nombre, int expiraEn, int calidad) {
         this.nombre = nombre;
@@ -17,19 +17,19 @@ public abstract class Item {
         return this.nombre + ", " + this.expiraEn + ", " + this.calidad;
     }
 
-    public void update() {
-        administrarCalidad();
-        administrarCaducidad();
-        administrarCalidadArticulosExpirados();
+    public final void update() {
+        this.calidad = calcularCalidad(this.expiraEn, this.calidad);
+        expiraEn = expiraEn - montoParaExpirar();
+        this.calidad = calcularCalidadArticulosExpirados(this.expiraEn, this.calidad);
     }
 
-    protected abstract void administrarCalidadArticulosExpirados();
-
-    protected void administrarCaducidad() {
-        expiraEn = expiraEn - 1;
+    protected int montoParaExpirar() {
+        return 1;
     }
 
-    protected abstract void administrarCalidad();
+    protected abstract int calcularCalidad(int actualExpiraEn, int actualCalidad);
+
+    protected abstract int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad);
 
     public boolean esSuNombre(String posibleNombre) {
         return this.nombre.equals(posibleNombre);

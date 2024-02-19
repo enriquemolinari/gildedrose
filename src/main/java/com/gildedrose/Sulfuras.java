@@ -6,14 +6,18 @@ public class Sulfuras extends Item {
     }
 
     @Override
-    protected void administrarCalidad() {
+    protected int calcularCalidad(int actualExpiraEn, int actualCalidad) {
+        return actualCalidad;
+    }
+
+
+    @Override
+    protected int montoParaExpirar() {
+        return 0;
     }
 
     @Override
-    protected void administrarCaducidad() {
-    }
-
-    @Override
-    protected void administrarCalidadArticulosExpirados() {
+    protected int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad) {
+        return actualCalidad;
     }
 }

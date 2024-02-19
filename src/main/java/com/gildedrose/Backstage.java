@@ -6,26 +6,29 @@ public class Backstage extends Item {
     }
 
     @Override
-    protected void administrarCalidad() {
+    protected int calcularCalidad(int actualExpiraEn, int actualCalidad) {
+        var calidad = actualCalidad;
         if (calidad < 50) {
             calidad = calidad + 1;
-            if (expiraEn < 11) {
+            if (actualExpiraEn < 11) {
                 if (calidad < 50) {
                     calidad = calidad + 1;
                 }
             }
-            if (expiraEn < 6) {
+            if (actualExpiraEn < 6) {
                 if (calidad < 50) {
                     calidad = calidad + 1;
                 }
             }
         }
+        return calidad;
     }
 
     @Override
-    protected void administrarCalidadArticulosExpirados() {
-        if (expiraEn < 0) {
-            calidad = 0;
+    protected int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad) {
+        if (actualExpiraEn < 0) {
+            return 0;
         }
+        return actualCalidad;
     }
 }

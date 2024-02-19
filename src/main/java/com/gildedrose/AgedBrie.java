@@ -6,18 +6,20 @@ public class AgedBrie extends Item {
     }
 
     @Override
-    protected void administrarCalidad() {
-        if (calidad < 50) {
-            calidad = calidad + 1;
+    protected int calcularCalidad(int actualExpiraEn, int actualCalidad) {
+        if (actualCalidad < 50) {
+            return actualCalidad + 1;
         }
+        return actualCalidad;
     }
 
     @Override
-    protected void administrarCalidadArticulosExpirados() {
-        if (expiraEn < 0) {
-            if (calidad < 50) {
-                calidad = calidad + 1;
+    protected int calcularCalidadArticulosExpirados(int actualExpiraEn, int actualCalidad) {
+        if (actualExpiraEn < 0) {
+            if (actualCalidad < 50) {
+                return actualCalidad + 1;
             }
         }
+        return actualCalidad;
     }
 }
